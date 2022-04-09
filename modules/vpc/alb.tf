@@ -1,5 +1,5 @@
 ######################Elastic Load Balancer####################
-resource "aws_elb" "shered" {
+resource "aws_elb" "shered_services_serverless_jenkins_elb" {
 
   #the name of the domain -elb
   name = "${var.domain_name}-shered_services_serverless_jenkins"
