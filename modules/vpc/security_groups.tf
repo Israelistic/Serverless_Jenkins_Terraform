@@ -1,18 +1,18 @@
 #Create Public SG for allowing TCP/80 & TCP/22
 #=======================================
-resource "aws_security_group" "shared_services_public_sg" {
+resource "aws_security_group" "shared_services_serverless_jenkins_public_sg" {
   name        = "shared_services_public_sg"
   description = "Used for access to the public instances"
   vpc_id      = aws_vpc.shared_services_vpc.id
   #Inbound internet access
   #SSH
-#   ingress {
-#     description = "Allow SSH traffic"
-#     from_port   = 22
-#     to_port     = 22
-#     protocol    = "tcp"
-#     cidr_blocks = ["0.0.0.0/0"]
-#   }
+  #   ingress {
+  #     description = "Allow SSH traffic"
+  #     from_port   = 22
+  #     to_port     = 22
+  #     protocol    = "tcp"
+  #     cidr_blocks = ["0.0.0.0/0"]
+  #   }
 
   #HTTP
   ingress {
@@ -38,6 +38,6 @@ resource "aws_security_group" "shared_services_public_sg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
   tags = {
-    Name = "shared_services-SecurityGroup"
+    Name = "shared_services_Serverlerss_Jenkins_SecurityGroup"
   }
 }

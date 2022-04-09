@@ -5,7 +5,7 @@ variable "region" {
   default = "ca-central-1"
 }
 #DOMAIN_NAME
-domain_name         = "canadaclouds"
+domain_name = "canadaclouds"
 #ELB
 variable "elb_healthy_threshold" {}
 variable "elb_unhealthy_threshold" {}

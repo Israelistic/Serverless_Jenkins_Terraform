@@ -1,12 +1,12 @@
 ######################Elastic Load Balancer####################
-resource "aws_elb" "north_pole_wp_elb" {
+resource "aws_elb" "shered" {
 
   #the name of the domain -elb
-  name = "${var.domain_name}-elb-north-pole"
+  name = "${var.domain_name}-shered_services_serverless_jenkins"
   #pointing the subnets the ELB will use
-  subnets = ["${aws_subnet.north_pole_public1_sunbet.id}", "${aws_subnet.north_pole_public2_sunbet.id}"]
+  subnets = ["${aws_subnet.shared_services_public_subnet_1.id}", "${aws_subnet.shared_services_public_subnet_2.id}"]
   #pointing the security group the ELB will use
-  security_groups = ["${aws_security_group.shared_services_public_sg.id}"]
+  security_groups = ["${shared_services_serverless_jenkins_public_sg.id}"]
   listener {
     instance_port     = 80
     instance_protocol = "http"
@@ -30,7 +30,7 @@ resource "aws_elb" "north_pole_wp_elb" {
   connection_draining_timeout = 400
 
   tags = {
-    Name = "north_pole_wp_${var.domain_name}-elb"
+    Name = "shered_services_serverless_jenkins_${var.domain_name}-elb"
   }
 
 
